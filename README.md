@@ -46,6 +46,32 @@ diag([3, 7])
 // => [[3, 0], [7, 0]];
 ```
 
+### diagBlock
+
+```js
+const {diagBlock} = require('simple-linalg');
+const a = [[3, 7], [4, 9]];
+const b = [[6, 2], [5, 8]];
+
+const blocks = [a, b];
+
+const result = diagBlock({blocks});
+
+// => [[3, 7, 0, 0], [4, 9, 0, 0], [0, 0, 6, 2], [0, 0, 5, 8]];
+```
+
+### cosSimilarity
+
+```js
+const {cosSimilarity} = require('simple-linalg');
+
+const a = [0, 7];
+const b = [0, 2];
+
+cosSimilarity(a, b) 
+// => 1
+```
+
 ### dotProduct
 
 ```js
@@ -57,6 +83,20 @@ const b = [[6, 2], [5, 8]];
 dotProduct(a, b) 
 // => [[18, 14], [20, 72]];
 ```
+
+
+### euclideanDist
+
+```js
+const {euclideanDist} = require('simple-linalg');
+
+const a = [3, 6];
+const b = [6, 2];
+
+euclideanDist(a, b) 
+// => 5
+```
+
 
 ### elemWise
 

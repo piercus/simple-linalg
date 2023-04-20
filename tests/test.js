@@ -1,5 +1,5 @@
 const test = require('ava');
-const {add, diag, norm, dotProduct, mapMatrix, frobenius, elemWise, identity, invert, matMul, padWithZeroCols, subtract, subSquareMatrix, sum, trace, transpose, zeros} = require('..');
+const {add, cosSimilarity, diag, diagBlock, euclideanDist, norm, dotProduct, mapMatrix, frobenius, elemWise, identity, invert, matMul, padWithZeroCols, subtract, subSquareMatrix, sum, trace, transpose, zeros} = require('..');
 
 test('add', t => {
 	const a = [[3, 7], [4, 9]];
@@ -8,9 +8,33 @@ test('add', t => {
 	t.deepEqual(result, [[9, 9], [9, 17]]);
 });
 
+test('cosSimilarity', t => {
+	const a = [0, 7];
+	const b = [0, 2];
+
+	const result = cosSimilarity(a, b);
+	t.is(result, 1);
+});
+
 test('diag', t => {
 	const result = diag([3, 7]);
 	t.deepEqual(result, [[3, 0], [0, 7]]);
+});
+
+test('diagBlock', t => {
+	const a = [[3, 7], [4, 9]];
+	const b = [[6, 2], [5, 8]];
+	const blocks = [a, b];
+	const result = diagBlock({blocks});
+	t.deepEqual(result, [[3, 7, 0, 0], [4, 9, 0, 0], [0, 0, 6, 2], [0, 0, 5, 8]]);
+});
+
+test('euclideanDist', t => {
+	const a = [3, 6];
+	const b = [6, 2];
+
+	const result = euclideanDist(a, b);
+	t.is(result, 5);
 });
 
 test('frobenius', t => {

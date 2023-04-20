@@ -1,6 +1,9 @@
 declare module 'simple-linalg' {
 	export function add(...matrices: number[][][]): number[][];
+	export function cosSimilarity(vector1: number[], vector2: number[]): number;
 	export function diag(diagonal: number[]): number[][];
+	export function diagBlock(options: {blocks: number[][][]; order: number[]}): number[][];
+	export function euclideanDist(vector1: number[], vector2: number[]): number;
 	export function frobenius(a: number[][], b: number[][]): number;
 	// eslint-disable-next-line unicorn/prevent-abbreviations
 	export function elemWise(matrices: number[][][], callback: (list: number[], rowId: number, colId: number) => void): void;
