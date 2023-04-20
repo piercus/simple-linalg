@@ -1,6 +1,6 @@
 {
   "name": "simple-linalg",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple linear algebra library for js",
   "main": "index.js",
   "scripts": {
