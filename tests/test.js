@@ -1,5 +1,5 @@
 const test = require('ava');
-const {add, cosSimilarity, diag, diagBlock, euclideanDist, norm, dotProduct, mapMatrix, frobenius, elemWise, identity, invert, matMul, padWithZeroCols, subtract, subSquareMatrix, sum, trace, transpose, zeros} = require('..');
+const {add, cosSimilarity, diag, diagBlock, euclideanDist, norm, dotProduct, mapMatrix, matPermutation, frobenius, elemWise, identity, invert, matMul, padWithZeroCols, subtract, subSquareMatrix, sum, trace, transpose, zeros} = require('..');
 
 test('add', t => {
 	const a = [[3, 7], [4, 9]];
@@ -82,6 +82,12 @@ test('matMul', t => {
 	const b = [[6, 2], [5, 8]];
 	const result = matMul(a, b);
 	t.deepEqual(result, [[53, 62], [69, 80]]);
+});
+
+test('matPermutation', t => {
+	const a = [[3, 7], [4, 9]];
+	const result = matPermutation({matrix: a, outputSize: [3, 3], rowIndexes: [2, 0], colIndexes: [0, 2]});
+	t.deepEqual(result, [[4, 0, 9], [0, 0, 0], [3, 0, 7]]);
 });
 
 test('padWithZeroCols', t => {

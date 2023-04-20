@@ -10,6 +10,7 @@ declare module 'simple-linalg' {
 	export function identity(n: number): number[][];
 	export function invert(matrix: number[][]): number[][];
 	export function matMul(a: number[][], b: number[][]): number[][];
+	export function matPermutation(options: {matrix: number[][]; outputSize: number[]; colIndexes: number[]; rowIndexes: number[]}): number[][];
 	export function padWithZeroCols(matrix: number[][], options: {columns: number}): number[][];
 	export function subtract(a: number[][], b: number[][]): number[][];
 	export function subSquareMatrix(matrix: number[][], indices: number[]): number[][];

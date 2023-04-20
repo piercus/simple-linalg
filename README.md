@@ -170,6 +170,17 @@ matMul(a, b)
 
 ```
 
+
+### matPermutation
+```js
+const {matPermutation} = require('simple-linalg');
+const a = [[3, 7], [4, 9]];
+
+matPermutation({matrix: a, outputSize: [3,3], rowIndexes: [2, 0], colIndexes: [0,2]}) 
+// => [[4, 0, 9], [0, 0, 0], [3, 0, 7]];
+
+```
+
 ### mapMatrix
 
 ```js
