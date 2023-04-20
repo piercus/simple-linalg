@@ -7,7 +7,8 @@
     "test": "xo && ava"
   },
   "files": [
-    "lib"
+    "lib",
+    "simple-linalg.d.ts"
   ],
   "types": "simple-linalg.d.ts",
   "repository": {
