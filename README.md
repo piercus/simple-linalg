@@ -36,6 +36,7 @@ add(a, b)
 // => [[9, 9], [9, 17]];
 
 ```
+
 ### diag
 
 ```js
@@ -108,6 +109,7 @@ identity(2)
 
 // [[1,0],[0,1]]
 ```
+
 ### invert
 
 ```js
@@ -116,6 +118,7 @@ const {invert} = require('simple-linalg');
 const a = [[3, 7], [4, 9]];
 invert(a) 
 ```
+
 ### matMul
 ```js
 const {matMul} = require('simple-linalg');
@@ -126,7 +129,9 @@ matMul(a, b)
 // => [[53, 62], [69, 80]];
 
 ```
+
 ### mapMatrix
+
 ```js
 const {mapMatrix} = require('simple-linalg');
 const a = [[3, 7], [4, 9]];
@@ -139,7 +144,9 @@ mapMatrix([a,b], function(value, rowId, colId){
 }) 
 // => sum is 23;
 ```
+
 ### norm
+
 ```js
 const {norm} = require('simple-linalg');
 const a = [3, 4];
@@ -147,7 +154,9 @@ const a = [3, 4];
 norm(a)
 // => norm is 5;
 ```
+
 ### padWithZeroCols
+
 ```js
 const {padWithZeroCols} = require('simple-linalg');
 const a = [[3, 7], [4, 9]];
@@ -158,6 +167,7 @@ padWithZeroCols(a, {columns: 4})
 ```
 
 ### subtract
+
 ```js
 const {subtract} = require('simple-linalg');
 
@@ -170,6 +180,7 @@ sub(a, b)
 ```
 
 ### subSquareMatrix
+
 ```js
 const {subSquareMatrix} = require('simple-linalg');
 
@@ -180,6 +191,7 @@ subSquareMatrix(a, [0, 2])
 ```
 
 ### sum
+
 ```js
 const {sum} = require('simple-linalg');
 
@@ -191,6 +203,7 @@ sum(a)
 
 
 ### trace
+
 ```js
 const {trace} = require('simple-linalg');
 
@@ -201,6 +214,7 @@ trace(a)
 ```
 
 ### transpose
+
 ```js
 const {transpose} = require('simple-linalg');
 
@@ -211,6 +225,7 @@ transpose(a)
 ```
 
 ### zeros
+
 ```js
 const {zeros} = require('simple-linalg');
 
