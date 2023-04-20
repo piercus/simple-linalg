@@ -1,0 +1,50 @@
+{
+  "name": "simple-linalg",
+  "version": "1.0.0",
+  "description": "Simple linear algebra library for js",
+  "main": "index.js",
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/piercus/simple-linalg.git"
+  },
+  "keywords": [
+    "linear",
+    "algebra",
+    "simple",
+    "array",
+    "kiss"
+  ],
+  "author": "Pierre Colle <piercus@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/piercus/simple-linalg/issues"
+  },
+  "homepage": "https://github.com/piercus/simple-linalg#readme",
+  "devDependencies": {
+    "ava": "^5.2.0",
+    "xo": "^0.54.1"
+  },
+  "xo": {
+    "rules": {
+      "no-multi-assign": 0,
+      "import/extensions": 0,
+      "unicorn/prefer-module": 0,
+      "unicorn/no-array-reduce": 0,
+      "unicorn/no-new-array": 0,
+      "arrow-body-style": 0,
+      "valid-jsdoc": [
+        1,
+        {
+          "requireParamDescription": false,
+          "requireReturnDescription": false
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "matrix-inverse": "^2.0.0"
+  }
+}
