@@ -1,5 +1,5 @@
 const test = require('ava');
-const {add, diag, frobenius, elemWise, identity, invert, matMul, padWithZeroCols, substract, subSquareMatrix, sum, trace, transpose, zeros} = require('./lib');
+const {add, diag, dotProduct, mapMatrix, frobenius, elemWise, identity, invert, matMul, padWithZeroCols, subtract, subSquareMatrix, sum, trace, transpose, zeros} = require('..');
 
 test('add', t => {
 	const a = [[3, 7], [4, 9]];
@@ -60,10 +60,10 @@ test('padWithZeroCols', t => {
 	t.deepEqual(result, [[3, 7, 0, 0], [4, 9, 0, 0]]);
 });
 
-test('substract', t => {
+test('subtract', t => {
 	const a = [[3, 7], [4, 9]];
 	const b = [[6, 2], [5, 8]];
-	const result = substract(a, b);
+	const result = subtract(a, b);
 	t.deepEqual(result, [[-3, 5], [-1, 1]]);
 });
 
@@ -94,4 +94,23 @@ test('transpose', t => {
 test('zeros', t => {
 	const result = zeros(2, 2);
 	t.deepEqual(result, [[0, 0], [0, 0]]);
+});
+
+test('mapMatrix', t => {
+	const a = [[3, 7], [4, 9]];
+
+	let sum = 0;
+	mapMatrix(a, (value, _rowId, _colId) => {
+		sum += value;
+	});
+
+	t.is(sum, 23);
+});
+
+test('dotProduct', t => {
+	const a = [3, 7];
+	const b = [6, 2];
+
+	const result = dotProduct(a, b);
+	t.is(result, 32);
 });

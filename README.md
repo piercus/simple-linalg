@@ -40,16 +40,17 @@ const {diag} = require('simple-linalg');
 diag([3, 7]) 
 // => [[3, 0], [7, 0]];
 ```
-### frobenius
+
+### dotProduct
 
 ```js
-const {frobenius} = require('simple-linalg');
+const {dotProduct} = require('simple-linalg');
 
 const a = [[3, 7], [4, 9]];
 const b = [[6, 2], [5, 8]];
 
-frobenius(a, b) 
-// => 6
+dotProduct(a, b) 
+// => [[18, 14], [20, 72]];
 ```
 
 ### elemWise
@@ -69,6 +70,20 @@ elemWise([a,b], function(list, rowId, colId){
 
 // sum is 44
 ```
+
+
+### frobenius
+
+```js
+const {frobenius} = require('simple-linalg');
+
+const a = [[3, 7], [4, 9]];
+const b = [[6, 2], [5, 8]];
+
+frobenius(a, b) 
+// => 6
+```
+
 
 ### identity
 
@@ -107,6 +122,20 @@ matMul(a, b)
 // => [[53, 62], [69, 80]];
 
 ```
+### mapMatrix
+```js
+const {mapMatrix} = require('simple-linalg');
+const a = [[3, 7], [4, 9]];
+
+
+let sum = 0;
+mapMatrix([a,b], function(value, rowId, colId){
+	sum += value;
+	// you can use rowId and colId here
+}) 
+// => sum is 23;
+```
+
 ### padWithZeroCols
 ```js
 const {padWithZeroCols} = require('simple-linalg');
@@ -117,9 +146,9 @@ padWithZeroCols(a, {columns: 4})
 
 ```
 
-### substract
+### subtract
 ```js
-const {substract} = require('simple-linalg');
+const {subtract} = require('simple-linalg');
 
 const a = [[3, 7], [4, 9]];
 const b = [[6, 2], [5, 8]];
