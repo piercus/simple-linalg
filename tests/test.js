@@ -1,5 +1,5 @@
 const test = require('ava');
-const {add, diag, dotProduct, mapMatrix, frobenius, elemWise, identity, invert, matMul, padWithZeroCols, subtract, subSquareMatrix, sum, trace, transpose, zeros} = require('..');
+const {add, diag, norm, dotProduct, mapMatrix, frobenius, elemWise, identity, invert, matMul, padWithZeroCols, subtract, subSquareMatrix, sum, trace, transpose, zeros} = require('..');
 
 test('add', t => {
 	const a = [[3, 7], [4, 9]];
@@ -18,6 +18,12 @@ test('frobenius', t => {
 	const b = [[6, 2], [5, 8]];
 	const result = frobenius(a, b);
 	t.is(result, 6);
+});
+
+test('norm', t => {
+	const a = [3, 4];
+	const result = norm(a);
+	t.is(result, 5);
 });
 
 test('elemWise', t => {

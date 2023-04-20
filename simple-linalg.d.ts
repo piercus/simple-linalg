@@ -14,6 +14,7 @@ declare module 'simple-linalg' {
 	export function trace(matrix: number[][]): number;
 	export function transpose(matrix: number[][]): number[][];
 	export function zeros(n: number): number[][];
+	export function norm(vector: number[]): number;
 	export function mapMatrix(matrix: number[][], callback: (value: number, rowId: number, colId: number) => void): void;
 	export function dotProduct(a: number[], b: number[]): number;
 }

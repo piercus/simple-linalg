@@ -1,23 +1,27 @@
-# simple-linalg
+# simple-linalg 😄
 
 Simple Linear algebra function in JS
 
-## Installation
+## Installation 📦
 
-```
+```bash
 npm install simple-linalg
 ```
 
-## Motivation
+## Motivation 🚀
 
-This is a spin-off project from [Kalman Filter](https://github.com/piercus/kalman-filter)
+`simple-linalg` is a spin-off project from the [Kalman Filter](https://github.com/piercus/kalman-filter) library. We created this library to provide essential linear algebra functions in a user-friendly, efficient, and accessible way. 
 
-Basic ideas are : 
-* KISS : Keep it simple and stupid
-* Pure functionnal library
-* Native JS Array manipulation
-* Small footprint (only deps is [matrix-inverse](https://www.npmjs.com/package/matrix-inverse))
+We believe in keeping things simple and efficient, and that's what `simple-linalg` is all about!
 
+Here's what makes simple-linalg stand out:
+
+*KISS*: Keep It Simple and Stupid 😇 - We focus on delivering a straightforward and easy-to-understand library.
+*Pure Functional*: All functions are designed to be pure and functional, which makes it easier to reason about the code 📚.
+*Native JS Array Manipulation*: We use native JavaScript arrays for simplicity and compatibility with a wide range of projects 🌐.
+*Small Footprint*: Our only dependency is matrix-inverse, which keeps the library lightweight and easy to integrate 🎈.
+
+So, if you're looking for a simple, efficient, and easy-to-use linear algebra library for your JavaScript projects, look no further! `simple-linalg` is here to help you out! 😊
 
 ## Examples
 
@@ -135,7 +139,14 @@ mapMatrix([a,b], function(value, rowId, colId){
 }) 
 // => sum is 23;
 ```
+### norm
+```js
+const {norm} = require('simple-linalg');
+const a = [3, 4];
 
+norm(a)
+// => norm is 5;
+```
 ### padWithZeroCols
 ```js
 const {padWithZeroCols} = require('simple-linalg');
