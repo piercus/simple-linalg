@@ -86,7 +86,9 @@ test('matMul', t => {
 
 test('matPermutation', t => {
 	const a = [[3, 7], [4, 9]];
-	const result = matPermutation({matrix: a, outputSize: [3, 3], rowIndexes: [2, 0], colIndexes: [0, 2]});
+	const result = matPermutation({
+		matrix: a, outputSize: [3, 3], rowIndexes: [2, 0], colIndexes: [0, 2],
+	});
 	t.deepEqual(result, [[4, 0, 9], [0, 0, 0], [3, 0, 7]]);
 });
 
