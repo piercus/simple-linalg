@@ -60,7 +60,7 @@ declare module 'simple-linalg' {
     	return args2.reduce((a, b) => a + b, 0);
     });
     */
-	export function elemWise(matrices: number[][][], callback: (list: number[], rowId: number, colId: number) => void): void;
+	export function elemWise(matrices: number[][][], callback: (list: number[], rowId: number, colId: number) => number): number[][];
 	/**
 	 * build an identity square matrix
 	 * @param stateSize matrix size
